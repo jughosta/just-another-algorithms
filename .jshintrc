@@ -1,0 +1,23 @@
+{
+	"maxerr": 15,
+
+	"nonew": true,
+	"proto": true,
+	"maxparams": 10,
+	"maxdepth": 3,
+	"maxstatements": 50,
+	"maxcomplexity": 20,
+
+	"globalstrict": true,
+
+	"browser": false,
+	"node": true,
+
+	"globals": {
+		"Promise": true,
+		"window": true,
+		"describe": true,
+		"it": true,
+		"before": true
+	}
+}

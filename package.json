@@ -1,0 +1,29 @@
+{
+	"name": "just-another-algorithms",
+	"version": "1.0.0",
+	"description": "Basic algorithms in JavaScript",
+	"main": "index.js",
+	"scripts": {
+		"lint": "./node_modules/.bin/jshint --reporter node_modules/jshint-stylish/index.js ./ && ./node_modules/.bin/jscs ./",
+		"test": "npm run lint && ./node_modules/.bin/mocha ./test/*"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/JuliaRechkunova/just-another-algorithms.git"
+	},
+	"keywords": [
+		"cs",
+		"algorithms"
+	],
+	"author": "Julia Rechkunova <julia.rechkunova@gmail.com>",
+	"bugs": {
+		"url": "https://github.com/JuliaRechkunova/just-another-algorithms/issues"
+	},
+	"homepage": "https://github.com/JuliaRechkunova/just-another-algorithms#readme",
+	"devDependencies": {
+		"jscs": "^1.13.1",
+		"jshint": "^2.8.0",
+		"jshint-stylish": "^2.0.1",
+		"mocha": "^2.2.5"
+	}
+}
