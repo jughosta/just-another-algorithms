@@ -21,10 +21,10 @@ module.exports = {
 	 * @param {number} leftRemaining
 	 * @param {number} rightRemaining
 	 * @param {Array[number]} row
-	 * @param {number} count
+	 * @param {number} index
 	 * @private
 	 */
-	_addParen: function (list, leftRemaining, rightRemaining, row, count) {
+	_addParen: function (list, leftRemaining, rightRemaining, row, index) {
 		if (leftRemaining < 0 || rightRemaining < leftRemaining) {
 			return; // invalid state
 		}
@@ -35,13 +35,13 @@ module.exports = {
 		}
 
 		if (leftRemaining > 0) {
-			row[count] = '(';
-			this._addParen(list, leftRemaining - 1, rightRemaining, row, count + 1);
+			row[index] = '(';
+			this._addParen(list, leftRemaining - 1, rightRemaining, row, index + 1);
 		}
 
 		if (rightRemaining > leftRemaining) {
-			row[count] = ')';
-			this._addParen(list, leftRemaining, rightRemaining - 1, row, count + 1);
+			row[index] = ')';
+			this._addParen(list, leftRemaining, rightRemaining - 1, row, index + 1);
 		}
 	}
 };

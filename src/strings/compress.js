@@ -4,13 +4,13 @@ module.exports = {
 
 	/**
 	 * Compress the string
-	 * @param {string} theString
+	 * @param {string} text
 	 * @return {string}
 	 */
-	compress: function (theString) {
-		var n = theString.length;
+	compress: function (text) {
+		var n = text.length;
 		if (n < 2) {
-			return theString;
+			return text;
 		}
 
 		var compressionPart = '';
@@ -46,7 +46,7 @@ module.exports = {
 			}
 		};
 
-		symbol.changeSymbol(theString[0]);
+		symbol.changeSymbol(text[0]);
 		compression.setMaxAllowedLength(n);
 
 		function addPartToCompression() {
@@ -55,22 +55,22 @@ module.exports = {
 		}
 
 		for (var i = 1; i < n; i++) {
-			if (theString[i] === symbol.value) {
+			if (text[i] === symbol.value) {
 				symbol.count++;
 				continue;
 			}
 
 			addPartToCompression();
 			if (!compression.isEffective()) {
-				return theString;
+				return text;
 			}
 
-			symbol.changeSymbol(theString[i]);
+			symbol.changeSymbol(text[i]);
 		}
 
 		addPartToCompression();
 		if (!compression.isEffective()) {
-			return theString;
+			return text;
 		}
 
 		return compression.toString();

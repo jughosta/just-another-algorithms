@@ -4,11 +4,11 @@ module.exports = {
 
 	/**
 	 * Is the string a palindrome?
-	 * @param {string} theString
+	 * @param {string} text
 	 * @returns {boolean}
 	 */
-	isPalindrome: function (theString) {
-		var n = theString.length;
+	isPalindrome: function (text) {
+		var n = text.length;
 
 		if (n < 2) {
 			return true;
@@ -16,7 +16,7 @@ module.exports = {
 
 		var numberOfIterations = Math.floor(n / 2);
 		for (var i = 0; i < numberOfIterations; i++) {
-			if (theString[i] !== theString[n - i - 1]) {
+			if (text[i] !== text[n - i - 1]) {
 				return false;
 			}
 		}

@@ -2,13 +2,13 @@
 
 var TreeNode = require('../data-structure/tree-node');
 
-module.exports = BinaryTree;
+module.exports = BinarySearchTree;
 
 /**
  * Binary tree
  * @constructor
  */
-function BinaryTree() {
+function BinarySearchTree() {
 
 	/**
 	 * Root
@@ -21,7 +21,7 @@ function BinaryTree() {
  * Add tree node
  * @param {number} key
  */
-BinaryTree.prototype.add = function (key) {
+BinarySearchTree.prototype.add = function (key) {
 	var targetNode = null,
 		node = this.root;
 
@@ -51,7 +51,7 @@ BinaryTree.prototype.add = function (key) {
  * Add tree nodes from array
  * @param {Array[number]} elements
  */
-BinaryTree.prototype.addFromArray = function (elements) {
+BinarySearchTree.prototype.addFromArray = function (elements) {
 	for (var i = 0; i < elements.length; i++) {
 		if (typeof elements[i] !== 'number') {
 			continue;
@@ -66,7 +66,7 @@ BinaryTree.prototype.addFromArray = function (elements) {
  * @param {TreeNode} node
  * @return {TreeNode}
  */
-BinaryTree.prototype.search = function (key, node) {
+BinarySearchTree.prototype.search = function (key, node) {
 	node = node || this.root;
 
 	if (!node || (node.key === key)) {

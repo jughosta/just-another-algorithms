@@ -6,10 +6,9 @@ var solver = require('../../src/strings/parentheses'),
 describe('Strings', function () {
 	describe('Print all combinations of n-pairs of parentheses', function () {
 		it('should print parentheses', function () {
-			assert.deepEqual(solver.generateParens(3),
-				[
-					'((()))', '(()())', '(())()', '()(())', '()()()'
-				]
+			assert.deepEqual(
+				solver.generateParens(3),
+				['((()))', '(()())', '(())()', '()(())', '()()()']
 			);
 		});
 	});

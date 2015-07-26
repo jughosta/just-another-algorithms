@@ -44,21 +44,21 @@ module.exports = {
 			count: 0
 		};
 
-		return this._countKthToLast(head, k, result);
-	},
-
-	_countKthToLast: function (head, k, result) {
-		if (!head) {
-			return null;
-		}
-
-		var node = this._countKthToLast(head.next, k, result);
-		result.count++;
-
-		if (result.count === k) {
-			return head;
-		}
-
-		return node;
+		return countKthToLast(head, k, result);
 	}
 };
+
+function countKthToLast (head, k, result) {
+	if (!head) {
+		return null;
+	}
+
+	var node = countKthToLast(head.next, k, result);
+	result.count++;
+
+	if (result.count === k) {
+		return head;
+	}
+
+	return node;
+}
