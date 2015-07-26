@@ -3,7 +3,7 @@
 module.exports = {
 
 	/**
-	 * Given a real number between 0and 7(e.g.,0.72)
+	 * Given a real number between 0 and 7 (e.g., 0.72)
 	 * that is passed in as a double,
 	 * print the binary representation.
 	 * If the number cannot be represented accurately in binary
@@ -16,11 +16,11 @@ module.exports = {
 			return 'ERROR';
 		}
 
-		var binary = '.',
+		var binary = '0.',
 			frac = 0.5;
 
 		while (number > 0) {
-			if (binary.length > 32) {
+			if (binary.length > 34) {
 				return 'ERROR';
 			}
 

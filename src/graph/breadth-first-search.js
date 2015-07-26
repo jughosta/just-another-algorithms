@@ -14,6 +14,7 @@ module.exports = {
 			usedVertexes = [],
 			distances = [],
 			parents = [],
+			traverseOrder = [],
 			fromVertex, i, toVertex;
 
 		queue.push(startVertex);
@@ -28,6 +29,8 @@ module.exports = {
 
 		while (queue.length) {
 			fromVertex = queue.shift();
+
+			traverseOrder.push(fromVertex);
 
 			for (i = 0; i < graph[fromVertex].length; i++) {
 				if (fromVertex === i || !graph[fromVertex][i]) {
@@ -48,6 +51,7 @@ module.exports = {
 		}
 
 		return {
+			traverseOrder: traverseOrder,
 			usedVertexes: usedVertexes,
 			distances: distances,
 			parents: parents

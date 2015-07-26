@@ -1,27 +1,30 @@
 'use strict';
 
-var BFS = require('breadth-first-search');
+var breadthFirstSearch = require('./breadth-first-search').breadthFirstSearch;
 
 module.exports = {
+
+	/**
+	 * Shortest path in graph.
+	 * @param {Array[Array[number]]} graph
+	 * @param {number} fromVertex
+	 * @param {number} toVertex
+	 * @return {Array}
+	 */
 	findShortestPath: function (graph, fromVertex, toVertex) {
-		var bfs = BFS.breadthFirstSearch(graph, fromVertex);
+		var bfs = breadthFirstSearch(graph, fromVertex);
 
-	},
-
-	_pathPath: function (resultOfSearching, toVertex) {
-		if (!resultOfSearching.usedVertexes[toVertex]) {
-			return 'No path!';
+		if (!bfs.usedVertexes[toVertex]) {
+			return null;
 		}
 
 		var path = [],
 			i;
 
-		for (i = toVertex; i != -1; i = resultOfSearching.parents[i]) {
+		for (i = toVertex; i != -1; i = bfs.parents[i]) {
 			path.push(i);
 		}
 
-		path = path.reverse();
-
-		return path.join(' ');
+		return path.reverse();
 	}
 };

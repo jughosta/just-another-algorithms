@@ -11,8 +11,8 @@ module.exports = {
 	 */
 	swapOddEvenBits: function (x) {
 		x = parseInt(x, 2);
-		var swapOddBits = (x & 0xaaaaaaaa) >> 1;
-		var swapEvenBits = (x & 0x55555555) << 1;
+		var swapOddBits = (x & 0xaaaaaaaa) >> 1,
+			swapEvenBits = (x & 0x55555555) << 1;
 		return swapOddBits | swapEvenBits;
 	}
 };

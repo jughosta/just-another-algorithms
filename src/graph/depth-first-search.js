@@ -7,15 +7,20 @@ module.exports = {
 		var colors = [],
 			timeIn = [],
 			timeOut = [],
-			dfsTimer = 0;
+			dfsTimer = 0,
+			traverseOrder = [];
 
 		for (var i = 0; i < graph[startVertex].length; i++) {
-			colors[i] = 0;
+			colors.push(0);
+			timeIn.push(-1);
+			timeOut.push(-1);
 		}
 
 		var dfs = function (vertex) {
 			timeIn[vertex] = dfsTimer++;
 			colors[vertex] = 1;
+
+			traverseOrder.push(vertex);
 
 			for (var i = 0; i < graph[vertex].length; i++) {
 				if (vertex === i || !graph[vertex][i]) {
@@ -37,7 +42,8 @@ module.exports = {
 			timeIn: timeIn,
 			timeOut: timeOut,
 			colors: colors,
-			dfsTimer: dfsTimer
+			dfsTimer: dfsTimer,
+			traverseOrder: traverseOrder
 		};
 	}
 };
